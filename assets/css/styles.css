@@ -1,0 +1,465 @@
+/* Variables */
+:root {
+    --primary-color: #0A1128;
+    --secondary-color:#e92020;
+    --white-color: #FFFFFF;
+    --light-gray-color: #dfdfdf;
+    --gap: 3rem;
+}
+
+/* Global Styles */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* Inherit box-sizing from html */
+}
+
+
+*,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Montserrat;
+}
+
+/* Headings */
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 5.5rem;
+}
+
+h3 {
+    font-size: 4.5rem;
+}
+
+h4 {
+    font-size: 4rem;
+}
+
+h5 {
+    font-size: 3.5rem;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+}
+
+.main-bg {
+    background-image: url("./../img/confetti-doodles.svg");
+    background-position: center;
+    background-size: cover;
+    color: var(--white-color);
+}
+
+.white-bg {
+    background-color: var(--white-color);
+    background-position: center;
+    background-size: cover;
+    color: var(--primary-color);
+}
+
+/* Menu */
+.menu-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.menu {
+    width: 100%;
+    position: fixed;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border-bottom: solid 0.1rem var(--light-gray-color);
+}
+
+.menu nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.menu section h1 a {
+    font-size: 2.3rem;
+    font-weight: bolder;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 2rem;
+    display: block;
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 1rem;
+    left: 25%;
+    width: 0;
+    height: 0.2rem;
+    background-color: crimson;
+}
+
+.menu ul li a:hover::after {
+    width: 50%;
+}
+
+.space {
+    height: 4rem;
+}
+
+/* Introduction */
+.introduction-content, .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto auto;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+.introduction-text{
+    align-content: center;
+    height: 100%;
+}
+.content-text,
+.introduction-img,
+.contact-img{
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.introduction-text h2 {
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.introduction-img img, 
+.contact-img img {
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Curiosities */
+.curiosities-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curiosity-list {
+    list-style-type: decimal;
+    text-align: left;
+    width: fit-content;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.curiosity-list li {
+    margin-bottom: 2rem;
+}
+
+/* Top 3 Facts and Get a Cat */
+.introduction-content,
+.curiosities-content,
+.top3-content,
+.get-a-cat-content,
+.work-content, 
+.contact-content{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.top3-main-heading,
+.get-a-cat-main-heading,
+.gallery-main-heading {
+    padding-top: 5rem;
+}
+
+#top3 p,
+#get-a-cat p,
+#gallery p {
+    margin-bottom: 4rem;
+}
+
+#top3 h3,
+#get-a-cat h3 {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 6rem;
+    margin-bottom: 2rem;
+}
+
+#top3 h3::before,
+#get-a-cat h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    left: 0;
+    transform: rotate(5deg);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 5rem;
+    counter-reset: grid-counter;
+}
+
+.grid p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Gallery */
+#gallery {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 0 4rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.gallery-grid img,
+.gallery-img {
+    width: 100%;
+    max-width: 52rem;
+    max-height: 32.2rem;
+    margin-bottom: 8rem;
+    overflow: hidden;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.gallery-img img:hover {
+    transition: all 300ms ease-in-out;
+    transform: translate(-3%, 3%) scale(1.2) rotate(3deg);
+}
+
+/* Work */
+.work-content {
+    text-align: center;
+}
+
+.responsive-table {
+    margin: 0 auto;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 40rem;
+    border-collapse: collapse;
+    margin-top: 4rem;
+}
+
+table caption {
+    font-size: 1.6rem;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table th {
+    width: 33%;
+}
+
+table td,
+table th {
+    border: solid 0.1rem var(--light-gray-color);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table thead, table tfoot {
+    background-color: var(--light-gray-color);
+}
+
+.contact-form{
+    grid-column: span 2;
+}
+.form-grid legend{
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-size: 1.6rem;
+}
+.form-grid{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap)
+}
+.form-group{
+    flex: 1 1 32rem;
+}
+.form-group input:focus, 
+.form-group textarea:focus{
+    box-shadow: 0 0 1rem 0.4rem var(--secondary-color);
+}
+.full-width{
+    width: 100%;
+    flex: 1 1 auto;
+}
+.form-group label{
+    display: block;
+    margin-bottom: 1rem;
+}
+.form-group input,
+.form-group textarea{
+    border: none;
+    background-color: var(--white-color);
+    width: 100%;
+    padding: 1.5rem 2rem;
+}
+.form-group button{
+    border: 0.5rem solid var(--white-color);
+    background: none;
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    margin-bottom: 4rem;
+}
+.form-group button:hover{
+    cursor: pointer;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+.form-group ::placeholder{
+    color: var(--light-gray-color);
+}
+.contact-text{
+    align-content: center;
+}
+.contact-img{
+    max-width: 70%;
+}
+
+#footer{
+    min-height: 0;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.heart{
+    color: var(--primary-color);
+}
+#footer p{
+    margin: 0;
+    padding: 3rem;
+}
+
+.close-menu-label, .close-menu{
+    display: none;
+}
+@media(max-width: 800px){
+    .menu-content nav ul a{
+        font-size: 1rem;
+    }
+    .introduction-content{
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid img,
+    .gallery-img{
+        margin-bottom: 2rem;
+    }
+    .menu{
+        bottom: 0;
+        text-align: center;
+        display: none;
+    }
+    .menu-content{
+        height: 100vh;
+        justify-content: center;
+    }
+    .menu-content, .menu-content ul{
+        flex-direction: column;
+    }
+    .close-menu-div{
+        display:block;
+        position: fixed;
+    }
+    .close-menu{
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;      
+    }
+    .close-menu-label{
+        display: block;
+    }
+    .close-menu-label::after{
+        content: "\2261";
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        color: var(--white-color);
+        background-color: var(--primary-color);
+        font-size: 3rem;
+        width: 4rem;
+        text-align: center;
+    }
+    .close-menu:checked~.menu{
+        display:block;
+    }
+    .close-menu:checked~.close-menu-label::after{
+        content:"✕";
+    }
+
+    .main-content h2{
+        width: 90%;
+    }
+}
